@@ -1,0 +1,58 @@
+// Traversing_Linked_List
+
+  class Node{
+      int data;
+      Node next;
+      Node(int x){
+          data = x;
+          next = null;
+      }
+  }
+  public class TraversingLinkedList {
+      public static void main(String[] args) {
+          Node head = new Node(12);
+          head.next = new Node(23);
+          head.next.next = new Node((16));
+          head.next.next.next = new Node((24));
+          printList(head);
+      }
+      public static void printList(Node head){
+          Node temp = head;
+          while(temp != null){
+              System.out.println(temp.data);  // 12 23 16 24
+              temp = temp.next;
+          }
+      }
+  }
+--------------------------------------------------------------------------------
+
+// Insert_At_Begin
+    
+   head = insertAtBegin(head,4);  // Write this in Main Function.
+  
+   public static Node insertAtBegin(Node head , int x){
+        Node newNode = new Node(x);
+        newNode.next = head;
+        return newNode;
+   }
+
+----------------------------------------------------------------------------------
+
+// Insert_At_End
+  
+  head = insertAtEnd(head,47);  // Write this in Main Function.
+
+  public static Node insertAtEnd(Node head , int x){
+          Node temp = new Node(x);
+          if(head == null){
+              return temp;
+          }
+          Node curr = head;
+          while(curr.next != null){
+              curr = curr.next;
+          }
+          curr.next = temp;
+          return head;
+    }
+    
+------------------------------------------------------------------------------------
