@@ -55,4 +55,34 @@
           return head;
     }
     
-------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+
+// Delete First Node Of Singly Linked List
+  
+  public static delFirstNode(Node head){
+      if(head == null)
+        return null;
+      else
+        return head.next;
+  }
+
+--------------------------------------------------------------------------------------
+
+// Delete Last Node of Singly Linked List
+
+  public static Node delLastNode(Node head)(
+      if(head == null) return null;
+      if(head.next == null) return null;
+      Node curr = head;
+      while(curr.next.next != null){
+        curr = curr.next;
+      }
+      curr.next = null;
+      return head;
+  }  
+  
+-------------------------------------------------------------------------------------
+
+Insert at given Position in Singly Linked List
+
+  // Index Starting from position 1
