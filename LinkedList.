@@ -83,6 +83,26 @@
   
 -------------------------------------------------------------------------------------
 
-Insert at given Position in Singly Linked List
+// Insert at given Position in Singly Linked List.
 
-  // Index Starting from position 1
+ insertAtGivenPos(head,4,13);  // Write this in Main Function.
+
+ public static Node insertAtGivenPos(Node head, int pos , int data){
+       Node temp = new Node(data);
+       if(pos == 1){
+           temp.next = head;
+           return head;
+       }
+       Node curr = head;
+       for(int i=1 ; i<pos-1 && curr != null ; i++){
+           curr = curr.next;
+       }
+       if(curr == null) return head;
+       temp.next = curr.next;
+       curr.next = temp;
+       return head;
+ }
+ 
+ --------------------------------------------------------------------------------------
+ 
+ 
