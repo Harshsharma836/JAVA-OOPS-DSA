@@ -122,5 +122,21 @@
    }
 
  ---------------------------------------------------------------------------------------
+// Question On Linked List  
+
+1. Reverse Linked List
+ 
+ public ListNode reverseList(ListNode head) {
+        ArrayList<Integer> list = new ArrayList<>();
+        for(ListNode curr = head ; curr != null ; curr = curr.next){
+            list.add(curr.val);
+        }
+        int index = list.size()-1;
+        for(ListNode temp = head ; temp != null ; temp = temp.next){
+            temp.val = list.get(index);
+            index--;
+        }
+        return head;
+    }
  
  
