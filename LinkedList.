@@ -124,19 +124,21 @@
  ---------------------------------------------------------------------------------------
 // Question On Linked List  
 
-1. Reverse Linked List
- 
- public ListNode reverseList(ListNode head) {
-        ArrayList<Integer> list = new ArrayList<>();
-        for(ListNode curr = head ; curr != null ; curr = curr.next){
-            list.add(curr.val);
-        }
-        int index = list.size()-1;
-        for(ListNode temp = head ; temp != null ; temp = temp.next){
-            temp.val = list.get(index);
-            index--;
-        }
-        return head;
+1. Reverse Linked List                                                                  Efficient Solution
+  
+ public ListNode reverseList(ListNode head) {                                           ListNode reverse(Node head){
+        ArrayList<Integer> list = new ArrayList<>();                                        ListNode curr = head;
+        for(ListNode curr = head ; curr != null ; curr = curr.next){                        ListNode prev = null;
+            list.add(curr.val);                                                             while(curr != null){
+        }                                                                                       ListNode next = curr.next;
+        int index = list.size()-1;                                                              curr.next = prev;  
+        for(ListNode temp = head ; temp != null ; temp = temp.next){                            prev = curr;
+            temp.val = list.get(index);                                                         curr = next;
+            index--;                                                                        }
+        }                                                                                   return prev;
+        return head;                                                                    }   
     }
+    
+-------------------------------------------------------------------------------------------------------------------------------------------------
  
  
